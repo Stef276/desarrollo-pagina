@@ -132,6 +132,7 @@ form button:hover {
 .row {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .col {
@@ -149,6 +150,19 @@ form button:hover {
 
 .col-lg-4 {
     flex: 0 0 33.3333%;
+}
+
+/* Estilos para las imágenes dentro de la galería */
+.col img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.col img:hover {
+    transform: scale(1.05);
 }
 
 /* Estilos para el footer */
@@ -199,6 +213,11 @@ footer a:hover::after {
     .col-md-6,
     .col-lg-4 {
         flex-basis: 100%;
+    }
+
+    /* Ajustar la imagen de la galería para pantallas pequeñas */
+    .col img {
+        object-fit: contain;
     }
 }
 
