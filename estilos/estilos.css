@@ -8,19 +8,38 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #fcf4f4;
     color: #333;
     line-height: 1.6;
 }
 
+/* Variables CSS */
+:root {
+    --primary-color: #a15353;
+    --secondary-color: #ff6347;
+    --background-color: #f8f9fa;
+    --footer-background-color: #333;
+    --form-background-color: #fff;
+    --text-color-light: #fff;
+    --text-color-dark: #333;
+}
+
 /* Estilos globales */
 h1, h2 {
     font-weight: bold;
+    color: var(--primary-color);
 }
 
+/* Enlaces */
 a {
     text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
 }
 
 ul {
@@ -30,13 +49,19 @@ ul {
 /* Estilo para el encabezado */
 header {
     background-color: #f1e6e6;
-    color: rgb(161, 83, 83);
+    color: var(--primary-color);
     padding: 20px 0;
+    text-align: center;
+}
+
+header img {
+    width: 150px;
+    border-radius: 50%;
 }
 
 /* Estilos para el menú de navegación */
 .navbar {
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
 }
 
 .navbar-nav .nav-item {
@@ -44,33 +69,23 @@ header {
 }
 
 .nav-link {
-    color: #333;
-    font-size: 1.2rem;
+    color: var(--text-color-dark);
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #ff6347;
+    color: var(--secondary-color);
 }
 
-/* Sección de contenido */
+/* Estilo de la sección principal */
 section {
     padding: 30px 0;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
 /* Formulario de contacto */
 form {
-    background-color: #fff;
+    background-color: var(--form-background-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -80,13 +95,13 @@ form label {
     font-size: 1.1rem;
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: var(--text-color-dark);
 }
 
 form input,
 form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -94,20 +109,21 @@ form textarea {
 }
 
 form button {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 12px 20px;
     font-size: 1.2rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #ff6347;
+    background-color: var(--secondary-color);
 }
 
-/* Estilos de Grid */
+/* Sección de Galería */
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -123,13 +139,79 @@ form button:hover {
     padding: 15px;
 }
 
-/* Asegurando la responsividad */
+.col-12 {
+    flex: 0 0 100%;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+}
+
+.col-lg-4 {
+    flex: 0 0 33.3333%;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: var(--footer-background-color);
+    color: var(--text-color-light);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Efecto en el enlace "Contáctanos" */
+footer a {
+    position: relative;
+    color: var(--text-color-light);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+footer a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Estilos para el contenido responsivo */
 @media (max-width: 768px) {
     .navbar-nav {
         text-align: center;
+        margin-top: 10px;
     }
 
-    .col {
+    .col-md-6,
+    .col-lg-4 {
         flex-basis: 100%;
     }
+}
+
+/* Transiciones y hover para imágenes y botones */
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
 }
