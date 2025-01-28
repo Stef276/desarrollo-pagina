@@ -83,76 +83,13 @@ section {
     padding: 30px 0;
 }
 
-/* Formulario de contacto */
-form {
-    background-color: var(--form-background-color);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Galería utilizando CSS Grid */
+.galeria-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas grandes */
+    gap: 20px; /* Espacio entre imágenes */
 }
 
-form label {
-    font-size: 1.1rem;
-    display: block;
-    margin-bottom: 5px;
-    color: var(--text-color-dark);
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-form button {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    padding: 12px 20px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Sección de Galería */
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.col {
-    flex: 1;
-    padding: 15px;
-}
-
-.col-12 {
-    flex: 0 0 100%;
-}
-
-.col-md-6 {
-    flex: 0 0 50%;
-}
-
-.col-lg-4 {
-    flex: 0 0 33.3333%;
-}
-
-/* Estilos para las imágenes dentro de la galería */
 .col img {
     width: 100%;
     height: auto;
@@ -161,8 +98,16 @@ form button:hover {
     transition: transform 0.3s ease;
 }
 
+/* Efecto de hover en imágenes */
 .col img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .galeria-container {
+        grid-template-columns: 1fr; /* Una columna en vista móvil */
+    }
 }
 
 /* Estilos para el footer */
@@ -209,28 +154,4 @@ footer a:hover::after {
         text-align: center;
         margin-top: 10px;
     }
-
-    .col-md-6,
-    .col-lg-4 {
-        flex-basis: 100%;
-    }
-
-    /* Ajustar la imagen de la galería para pantallas pequeñas */
-    .col img {
-        object-fit: contain;
-    }
-}
-
-/* Transiciones y hover para imágenes y botones */
-img {
-    transition: transform 0.3s ease;
-}
-
-img:hover {
-    transform: scale(1.05);
-}
-
-button:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.05);
 }
