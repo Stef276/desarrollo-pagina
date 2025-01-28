@@ -1,157 +1,58 @@
-/* Reset de CSS */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fcf4f4;
-    color: #333;
-    line-height: 1.6;
+  font-family: "Arial", sans-serif;
+  background-color: #fcf4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Variables CSS */
-:root {
-    --primary-color: #a15353;
-    --secondary-color: #ff6347;
-    --background-color: #f8f9fa;
-    --footer-background-color: #333;
-    --form-background-color: #fff;
-    --text-color-light: #fff;
-    --text-color-dark: #333;
-}
-
-/* Estilos globales */
 h1, h2 {
-    font-weight: bold;
-    color: var(--primary-color);
+  font-weight: bold;
+  color: #a15353;
 }
 
-/* Enlaces */
 a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #a15353;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--secondary-color);
+  color: #ff6347;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-/* Estilo para el encabezado */
-header {
-    background-color: #f1e6e6;
-    color: var(--primary-color);
-    padding: 20px 0;
-    text-align: center;
-}
-
-header img {
-    width: 150px;
-    border-radius: 50%;
-}
-
-/* Estilos para el menú de navegación */
-.navbar {
-    background-color: var(--background-color);
-}
-
-.navbar-nav .nav-item {
-    margin-left: 20px;
-}
-
-.nav-link {
-    color: var(--text-color-dark);
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: var(--secondary-color);
-}
-
-/* Estilo de la sección principal */
-section {
-    padding: 30px 0;
-}
-
-/* Galería utilizando CSS Grid */
 .galeria-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas grandes */
-    gap: 20px; /* Espacio entre imágenes */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.col img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+.galeria-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Efecto de hover en imágenes */
-.col img:hover {
-    transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
+.galeria-col img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-/* Responsividad para pantallas pequeñas */
+.galeria-col img:hover {
+  transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
-    .galeria-container {
-        grid-template-columns: 1fr; /* Una columna en vista móvil */
-    }
+  .galeria-container {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Estilos para el footer */
-footer {
-    background-color: var(--footer-background-color);
-    color: var(--text-color-light);
-    padding: 20px;
-    text-align: center;
-}
-
-/* Efecto en el enlace "Contáctanos" */
-footer a {
-    position: relative;
-    color: var(--text-color-light);
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-footer a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 2px;
-    background-color: var(--secondary-color);
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}
-
-footer a:hover {
-    color: var(--secondary-color);
-}
-
-footer a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-/* Estilos para el contenido responsivo */
-@media (max-width: 768px) {
-    .navbar-nav {
-        text-align: center;
-        margin-top: 10px;
-    }
-}
+/*# sourceMappingURL=estilos.css.map */
