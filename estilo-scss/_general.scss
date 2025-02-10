@@ -48,8 +48,8 @@ a {
 
 footer a {
   @extend %enlace-base !optional;  // Usamos los estilos comunes para los enlaces
+  text-decoration: none;
   position: relative;
-  
   &::after {
     content: '';
     position: absolute;
