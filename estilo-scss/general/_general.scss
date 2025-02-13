@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@import '../utilidades/variables';
+@import '../utilidades/mixins';
 
 // Animación de desvanecimiento y desplazamiento hacia arriba
 @keyframes fadeInUp {
@@ -110,4 +110,14 @@ ul {
 .galeria-container {
     grid-template-columns: 1fr;  // En dispositivos móviles, las imágenes se mostrarán en una sola columna
     }
+}
+
+.img-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 10px;
+  text-align: center;
+  padding: 0 10px; 
+  opacity: 0; 
+  animation: fadeInUp 1s ease-out forwards;
 }

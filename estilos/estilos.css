@@ -121,5 +121,14 @@ ul {
     grid-template-columns: 1fr;
   }
 }
+.img-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 10px;
+  text-align: center;
+  padding: 0 10px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
 
 /*# sourceMappingURL=estilos.css.map */
