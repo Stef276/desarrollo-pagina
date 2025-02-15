@@ -104,21 +104,22 @@ ul {
 }
 
 .galeria-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
 }
 
 .galeria-col {
+  flex: 1 1 30%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @media (max-width: 768px) {
-  .galeria-container {
-    grid-template-columns: 1fr;
+  .galeria-col {
+    flex: 1 1 100%;
   }
 }
 .img-description {
